@@ -1,0 +1,36 @@
+#32. .NET Reflection and Attributes. Introduction to Reflection. Generic and Reflection. 
+Assembly class.
+
+1.  Какие возможности предоставляет отражение для динамического создания экземпляров 
+типов и доступа к их методам, полям и свойствам?
+- Отражение в языке программирования предоставляет возможности динамического создания 
+экземпляров типов и доступа к их методам, полям и свойствам через механизмы рефлексии.
+
+2.  Какие термины в IL соответствуют ключевым словам protected и internal?
+- В Intermediate Language (IL) ключевому слову protected соответствует family, 
+а ключевому слову internal соответствует assembly.
+
+3.  Как можно использовать отражение для доступа к атрибутам в метаданных программы?
+- Для доступа к атрибутам в метаданных программы можно использовать отражение через 
+получение списка атрибутов с помощью метода GetCustomAttributes из класса Type или 
+MemberInfo.
+
+4.  Какие методы и свойства отражения предоставляют информацию о типах обобщения?
+- Методы и свойства отражения, предоставляющие информацию о типах обобщения, включают 
+IsGenericType, IsGenericTypeDefinition, GetGenericArguments, GetGenericTypeDefinition, 
+MakeGenericType.
+
+5.  Приведите пример использования класса Assembly для получения текущей запущенной сборки, 
+создания экземпляра типа из этой сборки и вызова его метода с отложенным связыванием.
+
+Assembly assembly = Assembly.GetExecutingAssembly();
+Type type = assembly.GetType("Namespace.TypeName");
+object instance = Activator.CreateInstance(type);
+MethodInfo method = type.GetMethod("MethodName");
+method.Invoke(instance, null);
+
+6.  Как можно создать экземпляр обобщенного метода с помощью отражения?
+
+MethodInfo genericMethod = typeof(MyClass).GetMethod("MyGenericMethod");
+MethodInfo constructedMethod = genericMethod.MakeGenericMethod(typeof(T)); 
+constructedMethod.Invoke(instance, arguments);
