@@ -1,0 +1,16 @@
+C:\alif\C-sharp\erm\src\Erm.BussinessLayer\bin\Debug\net7.0\Erm.BussinessLayer.deps.json
+C:\alif\C-sharp\erm\src\Erm.BussinessLayer\bin\Debug\net7.0\Erm.BussinessLayer.dll
+C:\alif\C-sharp\erm\src\Erm.BussinessLayer\bin\Debug\net7.0\Erm.BussinessLayer.pdb
+C:\alif\C-sharp\erm\src\Erm.BussinessLayer\bin\Debug\net7.0\Erm.DataAccess.dll
+C:\alif\C-sharp\erm\src\Erm.BussinessLayer\bin\Debug\net7.0\Erm.DataAccess.pdb
+C:\alif\C-sharp\erm\src\Erm.BussinessLayer\obj\Debug\net7.0\Erm.BussinessLayer.csproj.AssemblyReference.cache
+C:\alif\C-sharp\erm\src\Erm.BussinessLayer\obj\Debug\net7.0\Erm.BussinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\alif\C-sharp\erm\src\Erm.BussinessLayer\obj\Debug\net7.0\Erm.BussinessLayer.AssemblyInfoInputs.cache
+C:\alif\C-sharp\erm\src\Erm.BussinessLayer\obj\Debug\net7.0\Erm.BussinessLayer.AssemblyInfo.cs
+C:\alif\C-sharp\erm\src\Erm.BussinessLayer\obj\Debug\net7.0\Erm.BussinessLayer.csproj.CoreCompileInputs.cache
+C:\alif\C-sharp\erm\src\Erm.BussinessLayer\obj\Debug\net7.0\Erm.BussinessLayer.sourcelink.json
+C:\alif\C-sharp\erm\src\Erm.BussinessLayer\obj\Debug\net7.0\Erm.Buss.274C970F.Up2Date
+C:\alif\C-sharp\erm\src\Erm.BussinessLayer\obj\Debug\net7.0\Erm.BussinessLayer.dll
+C:\alif\C-sharp\erm\src\Erm.BussinessLayer\obj\Debug\net7.0\refint\Erm.BussinessLayer.dll
+C:\alif\C-sharp\erm\src\Erm.BussinessLayer\obj\Debug\net7.0\Erm.BussinessLayer.pdb
+C:\alif\C-sharp\erm\src\Erm.BussinessLayer\obj\Debug\net7.0\ref\Erm.BussinessLayer.dll

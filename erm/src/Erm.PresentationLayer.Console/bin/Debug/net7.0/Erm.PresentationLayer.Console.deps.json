@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Erm.PresentationLayer.Console/1.0.0": {
+        "dependencies": {
+          "Erm.BussinessLayer": "1.0.0"
+        },
+        "runtime": {
+          "Erm.PresentationLayer.Console.dll": {}
+        }
+      },
+      "Erm.BussinessLayer/1.0.0": {
+        "dependencies": {
+          "Erm.DataAccess": "1.0.0"
+        },
+        "runtime": {
+          "Erm.BussinessLayer.dll": {}
+        }
+      },
+      "Erm.DataAccess/1.0.0": {
+        "runtime": {
+          "Erm.DataAccess.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Erm.PresentationLayer.Console/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Erm.BussinessLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Erm.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "3zbmBH0ofHg1kDfHBY6YFk+oP/x4v4faTRAmporgT8D+tKIzgcoBhJQXBrTdtjqJSKgM4stOwCfXNDhHyxnZcw==",
+  "success": true,
+  "projectFilePath": "C:\\alif\\C-sharp\\erm\\src\\Erm.BussinessLayer\\Erm.BussinessLayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\islom\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\islom\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\islom\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.16\\microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}
