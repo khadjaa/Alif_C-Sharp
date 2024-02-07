@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Bl6iyzrNTvIs7cBbhJ27Z6YZjwwTFz9sTicPxA4L5v0w6KeNC26zrPZ6ZjTloFZ/caieAcZTGc1sZDQHZwyDqQ==",
+  "dgSpecHash": "vOddFKfIROjUOgd15q5xgHYNaud/blPkGioiYAzqICFdpVTstPSPO1T31cdIgZkudZSm/87bsr5LhjHqY0txAQ==",
   "success": true,
   "projectFilePath": "C:\\alif\\C-sharp\\erm\\src\\Erm.DataAccess\\Erm.DataAccess.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\islom\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
-    "C:\\Users\\islom\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512",
-    "C:\\Users\\islom\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.16\\microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

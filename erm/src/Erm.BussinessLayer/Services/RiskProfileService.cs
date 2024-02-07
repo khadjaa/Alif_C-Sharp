@@ -1,9 +1,15 @@
-using Erm.BussinessLayer;
+using FluentValidation.Results;
+using Erm.BussinessLayer.Validators;
+using System.Diagnostics;
+using FluentValidation;
+
+namespace Erm.BussinessLayer;
 
 public sealed class RiskProfileService : IRiskProfileService
 {
-    public void Create(RiskProfileInfo riskProfileInfo)
+    public void Create(RiskProfileInfo profileInfo)
     {
-        throw new NotImplementedException();
+        RiskProfileInfoValidator validatorRules = new();
+        validatorRules.ValidateAndThrow(profileInfo);
     }
 }

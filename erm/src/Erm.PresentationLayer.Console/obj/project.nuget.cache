@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "eAkhhh7fnjEbrvaHqWpbt/jUMC2sgJz+jMii/JcEeNFnwYkzDjX5/fxIez4RR6N/rAjrBRwAVfCB12EtiOFGCQ==",
+  "dgSpecHash": "6OOGo6hxg/qUAYZg5dISCUpLzck3jpkGNSNqMX6f75XxQd/nHIlG7GYZK/ye+fCW9d67rcu3ujBi/L0BMg/UcA==",
   "success": true,
   "projectFilePath": "C:\\alif\\C-sharp\\erm\\src\\Erm.PresentationLayer.Console\\Erm.PresentationLayer.Console.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\islom\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512"
+  ],
   "logs": []
 }

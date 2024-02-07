@@ -9,59 +9,67 @@ internal class Program
         string cmd = String.Empty;
         while (!cmd.Equals(CommandHelper.ExitCommand))
         {
-            Console.ForegroundColor = ConsoleColor.White;
 
-            Console.WriteLine(CommandHelper.InputSymbol);
-            cmd = Console.ReadLine();
-
-            switch (cmd)
+            try
             {
-                case CommandHelper.CreateRiskProfileCommand:
-                    Console.WriteLine("Enter risk profile name:");
-                    string rpName = Console.ReadLine();
-                    Console.WriteLine("Enter risk profile description:");
-                    string rpDescription = Console.ReadLine();
-                    Console.WriteLine("Enter business process:");
-                    string rpBusinessProcess = Console.ReadLine();
-                    int rpOccurreceProbability;
-                    Console.WriteLine("Enter occurrence probability:");
-                    while (!int.TryParse(Console.ReadLine(), out rpOccurreceProbability))
-                    {
-                        Console.WriteLine("Invalid input. Please enter a valid integer value for occurrence probability:");
-                    }
-                    int rpPotentialBusinessImpact;
-                    Console.WriteLine("Enter potential business impact:");
-                    while (!int.TryParse(Console.ReadLine(), out rpPotentialBusinessImpact))
-                    {
-                        Console.WriteLine("Invalid input. Please enter a valid integer value for potential business impact:");
-                    }
+                Console.ForegroundColor = ConsoleColor.White;
 
-                    RiskProfileInfo riskProfileInfo = new()
-                    {
-                        Name = rpName,
-                        Description = rpDescription,
-                        BusinessProcess = rpBusinessProcess,
-                        OccurreceProbability = rpOccurreceProbability,
-                        PotentialBusinessImpact = rpPotentialBusinessImpact
-                    };
+                Console.WriteLine(CommandHelper.InputSymbol);
+                cmd = Console.ReadLine();
 
-                    riskProfileService.Create(riskProfileInfo);
+                switch (cmd)
+                {
+                    case CommandHelper.CreateRiskProfileCommand:
+                        Console.WriteLine("Enter risk profile name:");
+                        string rpName = Console.ReadLine();
+                        Console.WriteLine("Enter risk profile description:");
+                        string rpDescription = Console.ReadLine();
+                        Console.WriteLine("Enter business process:");
+                        string rpBusinessProcess = Console.ReadLine();
+                        int rpOccurreceProbability;
+                        Console.WriteLine("Enter occurrence probability:");
+                        while (!int.TryParse(Console.ReadLine(), out rpOccurreceProbability))
+                        {
+                            Console.WriteLine("Invalid input. Please enter a valid integer value for occurrence probability:");
+                        }
+                        int rpPotentialBusinessImpact;
+                        Console.WriteLine("Enter potential business impact:");
+                        while (!int.TryParse(Console.ReadLine(), out rpPotentialBusinessImpact))
+                        {
+                            Console.WriteLine("Invalid input. Please enter a valid integer value for potential business impact:");
+                        }
 
-                    break;
-                case CommandHelper.HelpCommand:
-                    Console.WriteLine("> Available commands:");
-                    Console.WriteLine(CommandHelper.CreateRiskProfileCommand);
-                    Console.WriteLine(CommandHelper.HelpCommand);
-                    Console.WriteLine(CommandHelper.ExitCommand);
-                    break;
-                case CommandHelper.ExitCommand:
-                    Console.WriteLine("Exiting...");
-                    break;
-                default:
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine(CommandHelper.UnknownCommandMessage);
-                    break;
-            }
+                        RiskProfileInfo riskProfileInfo = new()
+                        {
+                            Name = rpName,
+                            Description = rpDescription,
+                            BusinessProcess = rpBusinessProcess,
+                            OccurreceProbability = rpOccurreceProbability,
+                            PotentialBusinessImpact = rpPotentialBusinessImpact
+                        };
+
+                        riskProfileService.Create(riskProfileInfo);
+
+                        break;
+                    case CommandHelper.HelpCommand:
+                        Console.WriteLine("> Available commands:");
+                        Console.WriteLine(CommandHelper.CreateRiskProfileCommand);
+                        Console.WriteLine(CommandHelper.HelpCommand);
+                        Console.WriteLine(CommandHelper.ExitCommand);
+                        break;
+                    case CommandHelper.ExitCommand:
+                        Console.WriteLine("Exiting...");
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine(CommandHelper.UnknownCommandMessage);
+                        break;
+                }
+            } catch (Exception ex)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(CommandHelper.InputSymbol + ex.Message);
+            }   
         }
     }
 }

@@ -19,3 +19,4 @@ C:\alif\C-sharp\erm\src\Erm.PresentationLayer.Console\obj\Debug\net8.0\refint\Er
 C:\alif\C-sharp\erm\src\Erm.PresentationLayer.Console\obj\Debug\net8.0\Erm.PresentationLayer.Console.pdb
 C:\alif\C-sharp\erm\src\Erm.PresentationLayer.Console\obj\Debug\net8.0\Erm.PresentationLayer.Console.genruntimeconfig.cache
 C:\alif\C-sharp\erm\src\Erm.PresentationLayer.Console\obj\Debug\net8.0\ref\Erm.PresentationLayer.Console.dll
+c:\alif\C-sharp\erm\src\Erm.PresentationLayer.Console\bin\Debug\net8.0\FluentValidation.dll

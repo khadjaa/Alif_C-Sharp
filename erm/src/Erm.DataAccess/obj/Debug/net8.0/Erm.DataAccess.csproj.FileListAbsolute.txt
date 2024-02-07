@@ -1,0 +1,12 @@
+c:\alif\C-sharp\erm\src\Erm.DataAccess\bin\Debug\net8.0\Erm.DataAccess.deps.json
+c:\alif\C-sharp\erm\src\Erm.DataAccess\bin\Debug\net8.0\Erm.DataAccess.dll
+c:\alif\C-sharp\erm\src\Erm.DataAccess\bin\Debug\net8.0\Erm.DataAccess.pdb
+c:\alif\C-sharp\erm\src\Erm.DataAccess\obj\Debug\net8.0\Erm.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+c:\alif\C-sharp\erm\src\Erm.DataAccess\obj\Debug\net8.0\Erm.DataAccess.AssemblyInfoInputs.cache
+c:\alif\C-sharp\erm\src\Erm.DataAccess\obj\Debug\net8.0\Erm.DataAccess.AssemblyInfo.cs
+c:\alif\C-sharp\erm\src\Erm.DataAccess\obj\Debug\net8.0\Erm.DataAccess.csproj.CoreCompileInputs.cache
+c:\alif\C-sharp\erm\src\Erm.DataAccess\obj\Debug\net8.0\Erm.DataAccess.sourcelink.json
+c:\alif\C-sharp\erm\src\Erm.DataAccess\obj\Debug\net8.0\Erm.DataAccess.dll
+c:\alif\C-sharp\erm\src\Erm.DataAccess\obj\Debug\net8.0\refint\Erm.DataAccess.dll
+c:\alif\C-sharp\erm\src\Erm.DataAccess\obj\Debug\net8.0\Erm.DataAccess.pdb
+c:\alif\C-sharp\erm\src\Erm.DataAccess\obj\Debug\net8.0\ref\Erm.DataAccess.dll

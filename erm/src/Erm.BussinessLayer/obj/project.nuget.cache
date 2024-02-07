@@ -1,12 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "3zbmBH0ofHg1kDfHBY6YFk+oP/x4v4faTRAmporgT8D+tKIzgcoBhJQXBrTdtjqJSKgM4stOwCfXNDhHyxnZcw==",
+  "dgSpecHash": "rfkOmFyCEcXBxu8VY8r8OtRHFwzMV+4lt3sjZ8gaBJ+bIX8fc67Gfc3MMX3fYFrbH9q6rod8HV2Ezui9ezBg9A==",
   "success": true,
   "projectFilePath": "C:\\alif\\C-sharp\\erm\\src\\Erm.BussinessLayer\\Erm.BussinessLayer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\islom\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
-    "C:\\Users\\islom\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512",
-    "C:\\Users\\islom\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.16\\microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512"
+    "C:\\Users\\islom\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512"
   ],
   "logs": []
 }
