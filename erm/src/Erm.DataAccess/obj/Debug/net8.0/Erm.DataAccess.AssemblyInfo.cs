@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Erm.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ddae6c007ac6be4069bf570194a5c521b2d6984")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d31b1299a8d4a7e2398ad3f14e9334aa413c6a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Erm.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Erm.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
