@@ -1,4 +1,5 @@
 ﻿using Erm.BussinessLayer;
+using Erm.DataAccess;
 
 internal class Program 
 {
@@ -19,6 +20,12 @@ internal class Program
 
                 switch (cmd)
                 {
+                    case CommandHelper.GetRiskProfileCommand:
+                        Console.WriteLine("Enter risk profile name for get:");
+                        string rpNameToGet = Console.ReadLine();
+                        RiskProfile riskProfile = riskProfileService.Get(rpNameToGet);
+                        Console.WriteLine($"Get {riskProfile.RiskName}");
+                        break;
                     case CommandHelper.CreateRiskProfileCommand:
                         Console.WriteLine("Enter risk profile name:");
                         string rpName = Console.ReadLine();
@@ -49,13 +56,53 @@ internal class Program
                         };
 
                         riskProfileService.Create(riskProfileInfo);
+                        break;
+                    case CommandHelper.UpdateRiskProfileCommand:
+                        Console.WriteLine("Enter risk profile name for update:");
+                        string rpNameToUpdate = Console.ReadLine();
+                        Console.WriteLine("Enter new risk profile name:");
+                        string rpNewName = Console.ReadLine();
+                        Console.WriteLine("Enter risk profile description:");
+                        string rpDescriptionToUpdate = Console.ReadLine();
+                        Console.WriteLine("Enter new business process:");
+                        string rpBusinessProcessToUpdate = Console.ReadLine();
+                        int rpOccurreceProbabilityToUpdate;
+                        Console.WriteLine("Enternew occurrence probability:");
+                        while (!int.TryParse(Console.ReadLine(), out rpOccurreceProbabilityToUpdate))
+                        {
+                            Console.WriteLine("Invalid input. Please enter a valid integer value for occurrence probability:");
+                        }
+                        int rpPotentialBusinessImpactToUpdate;
+                        Console.WriteLine("Enter new potential business impact:");
+                        while (!int.TryParse(Console.ReadLine(), out rpPotentialBusinessImpactToUpdate))
+                        {
+                            Console.WriteLine("Invalid input. Please enter a valid integer value for potential business impact:");
+                        }
 
+                        RiskProfileInfo riskProfileInfoToUpdate = new()
+                        {
+                            Name = rpNewName,
+                            Description = rpDescriptionToUpdate,
+                            BusinessProcess = rpBusinessProcessToUpdate,
+                            OccurreceProbability = rpOccurreceProbabilityToUpdate,
+                            PotentialBusinessImpact = rpPotentialBusinessImpactToUpdate
+                        };
+
+                        riskProfileService.Update(rpNameToUpdate, riskProfileInfoToUpdate);
+                        break;
+                    case CommandHelper.DeleteRiskProfileCommand: 
+                        Console.WriteLine("Enter risk profile name for delete:");
+                        string rpNameToDelete = Console.ReadLine();
+                        riskProfileService.Delete(rpNameToDelete);
                         break;
                     case CommandHelper.HelpCommand:
                         Console.WriteLine("> Available commands:");
                         Console.WriteLine(CommandHelper.CreateRiskProfileCommand);
                         Console.WriteLine(CommandHelper.HelpCommand);
                         Console.WriteLine(CommandHelper.ExitCommand);
+                        Console.WriteLine(CommandHelper.GetRiskProfileCommand);
+                        Console.WriteLine(CommandHelper.UpdateRiskProfileCommand);
+                        Console.WriteLine(CommandHelper.DeleteRiskProfileCommand);
                         break;
                     case CommandHelper.ExitCommand:
                         Console.WriteLine("Exiting...");
@@ -82,4 +129,7 @@ file static class CommandHelper
     public const string CreateRiskProfileCommand = "create_rsf";
     public const string CreateRiskProfileDescriptionCommand = "create_rsf_des";
     public const string UnknownCommandMessage = "Unknown command, use help to see available commands.";
+    public const string GetRiskProfileCommand = "get_rsf";
+    public const string UpdateRiskProfileCommand = "update_rsf";
+    public const string DeleteRiskProfileCommand = "delete_rsf";
 }

@@ -13,6 +13,11 @@ public sealed class RiskProfileService : IRiskProfileService
         _riskProfileRepository = new RiskProfileRepository();
     }
 
+    public RiskProfile Get(string riskProfileName)
+    {
+        return _riskProfileRepository.Get(riskProfileName);
+    }
+
     public void Create(RiskProfileInfo profileInfo)
     {
         RiskProfileInfoValidator validatorRules = new();
@@ -26,5 +31,25 @@ public sealed class RiskProfileService : IRiskProfileService
             OccurreceProbability = profileInfo.OccurreceProbability,
             PotentialBusinessImpact = profileInfo.PotentialBusinessImpact
         });
+    }
+
+    public void Update(string name, RiskProfileInfo profileInfo)
+    {
+        RiskProfileInfoValidator validatorRules = new();
+        validatorRules.ValidateAndThrow(profileInfo);
+
+        _riskProfileRepository.Update(name, new RiskProfile
+        {
+            RiskName = profileInfo.Name,
+            Description = profileInfo.Description,
+            BusinessProcess = new BusinessProcess { Name = profileInfo.BusinessProcess, Domain = profileInfo.BusinessProcess },
+            OccurreceProbability = profileInfo.OccurreceProbability,
+            PotentialBusinessImpact = profileInfo.PotentialBusinessImpact
+        });
+    }
+
+    public void Delete(string riskProfileName)
+    {
+        _riskProfileRepository.Delete(riskProfileName);
     }
 }

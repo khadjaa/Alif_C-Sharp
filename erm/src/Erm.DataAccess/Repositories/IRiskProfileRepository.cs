@@ -2,9 +2,8 @@ namespace Erm.DataAccess;
 
 public interface IRiskProfileRepository
 {
-    public void Create(RiskProfile entity);
     public RiskProfile Get(string name);
-    
+    public void Create(RiskProfile entity);
     void Update(string name, RiskProfile riskProfile);
-    void Delete(int riskProfileId);
+    void Delete(string name);
 }

@@ -12,6 +12,7 @@ public sealed class RiskProfileRepository : IRiskProfileRepository
     public void Create(RiskProfile entity)
     {
         _db.Add(entity);
+        Console.WriteLine($"AFTER CREATE {_db.Count}");
     }
 
     public RiskProfile Get(string name)
@@ -21,25 +22,29 @@ public sealed class RiskProfileRepository : IRiskProfileRepository
 
     public void Update(string name, RiskProfile riskProfile)
     {
-        // RiskProfile existingRiskProfile = Get(name);
-        // if (existingRiskProfile != null)
-        // {
-        //     existingRiskProfile.Name = riskProfile.Name;
-        //     existingRiskProfile.Description = riskProfile.Description;
-        //     existingRiskProfile.BusinessProcess = riskProfile.BusinessProcess;
-        //     existingRiskProfile.OccurreceProbability = riskProfile.OccurreceProbability;
-        //     existingRiskProfile.PotentialBusinessImpact = riskProfile.PotentialBusinessImpact;
-        //     _dbContext.SaveChanges();
-        // }
+        RiskProfile existingRiskProfile = Get(name);
+        Console.WriteLine($"BEFORE UPDATE {existingRiskProfile.RiskName}");
+        if (existingRiskProfile != null)
+        {
+            Console.WriteLine($"UPDATE {existingRiskProfile.RiskName}");
+
+            existingRiskProfile.RiskName = riskProfile.RiskName;
+            existingRiskProfile.Description = riskProfile.Description;
+            existingRiskProfile.BusinessProcess = riskProfile.BusinessProcess;
+            existingRiskProfile.OccurreceProbability = riskProfile.OccurreceProbability;
+            existingRiskProfile.PotentialBusinessImpact = riskProfile.PotentialBusinessImpact;
+
+            Console.WriteLine($"AFTER UPDATE {existingRiskProfile.RiskName}");
+        }
     }
 
-    public void Delete(int riskProfileId)
+    public void Delete(string name)
     {
-        // RiskProfile existingRiskProfile = _dbContext.RiskProfiles.FirstOrDefault(rp => rp.Id == riskProfileId);
-        // if (existingRiskProfile != null)
-        // {
-        //     _dbContext.RiskProfiles.Remove(existingRiskProfile);
-        //     _dbContext.SaveChanges();
-        // }
+        RiskProfile existingRiskProfile = _db.Single(x => x.RiskName == name);
+        if (existingRiskProfile != null)
+        {
+            Console.WriteLine($"DELETE {existingRiskProfile.RiskName}");
+            _db.Remove(existingRiskProfile);
+        }
     }
 }
