@@ -7,8 +7,9 @@ namespace Erm.BussinessLayer;
     {
         public RiskProfile Get(string riskProfileName);
         void Create(RiskProfileInfo riskProfileInfo);
-        void Update(string name, RiskProfileInfo riskProfileInfo);
+        void Update(string riskProfileName, RiskProfileInfo riskProfileInfo);
         void Delete(string riskProfileName);
+        double CalculateRisk(string riskProfileName);
     }
 
 

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Erm.BussinessLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ba9d4f3bc92608a574eacd726156b25e92fe161c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cfeaea438f58dc1771ea030a2c063bb39aca960c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Erm.BussinessLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Erm.BussinessLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

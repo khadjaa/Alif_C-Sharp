@@ -23,14 +23,7 @@ public sealed class RiskProfileService : IRiskProfileService
         RiskProfileInfoValidator validatorRules = new();
         validatorRules.ValidateAndThrow(profileInfo);
 
-        _riskProfileRepository.Create(new RiskProfile
-        {
-            RiskName = profileInfo.Name,
-            Description = profileInfo.Description,
-            BusinessProcess = new BusinessProcess { Name = profileInfo.BusinessProcess, Domain = profileInfo.BusinessProcess },
-            OccurreceProbability = profileInfo.OccurreceProbability,
-            PotentialBusinessImpact = profileInfo.PotentialBusinessImpact
-        });
+        _riskProfileRepository.Create(profileInfo.ToRiskProfile());
     }
 
     public void Update(string name, RiskProfileInfo profileInfo)
@@ -51,5 +44,33 @@ public sealed class RiskProfileService : IRiskProfileService
     public void Delete(string riskProfileName)
     {
         _riskProfileRepository.Delete(riskProfileName);
+    }
+
+    public double CalculateRisk(string riskProfileName)
+    {
+        var riskProfile = _riskProfileRepository.Get(riskProfileName);
+
+        double risk = riskProfile.OccurreceProbability * riskProfile.PotentialBusinessImpact;
+
+        return risk;
+    }
+}
+
+internal static class RiskProfileServiceExtensions
+{
+    public static RiskProfile ToRiskProfile(this RiskProfileInfo profileInfo) 
+    {
+        return new RiskProfile
+        {
+            RiskName = profileInfo.Name,
+            Description = profileInfo.Description,
+            BusinessProcess = new BusinessProcess 
+            { 
+                Name = profileInfo.BusinessProcess, 
+                Domain = profileInfo.BusinessProcess 
+            },
+            OccurreceProbability = profileInfo.OccurreceProbability,
+            PotentialBusinessImpact = profileInfo.PotentialBusinessImpact
+        };
     }
 }

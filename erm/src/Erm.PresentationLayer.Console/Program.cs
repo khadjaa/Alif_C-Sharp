@@ -103,9 +103,16 @@ internal class Program
                         Console.WriteLine(CommandHelper.GetRiskProfileCommand);
                         Console.WriteLine(CommandHelper.UpdateRiskProfileCommand);
                         Console.WriteLine(CommandHelper.DeleteRiskProfileCommand);
+                        Console.WriteLine(CommandHelper.CountRiskProfileCommand);
                         break;
                     case CommandHelper.ExitCommand:
                         Console.WriteLine("Exiting...");
+                        break;
+                    case CommandHelper.CountRiskProfileCommand:
+                        Console.WriteLine("Enter risk level name for count:");
+                        string rlNameToCount = Console.ReadLine();
+                        double count = riskProfileService.CalculateRisk(rlNameToCount);
+                        Console.WriteLine($"Count {count}");
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
@@ -132,4 +139,5 @@ file static class CommandHelper
     public const string GetRiskProfileCommand = "get_rsf";
     public const string UpdateRiskProfileCommand = "update_rsf";
     public const string DeleteRiskProfileCommand = "delete_rsf";
+    public const string CountRiskProfileCommand = "count_rsf";
 }
