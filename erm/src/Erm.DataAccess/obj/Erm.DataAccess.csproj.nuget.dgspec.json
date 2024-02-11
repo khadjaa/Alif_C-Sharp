@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\alif\\C-sharp\\erm\\src\\Erm.DataAccess\\Erm.DataAccess.csproj": {}
+    "C:\\alif\\C-sharp\\erm\\src\\Erm.DataAccess\\Erm.DataAccess.csproj": {}
   },
   "projects": {
-    "c:\\alif\\C-sharp\\erm\\src\\Erm.DataAccess\\Erm.DataAccess.csproj": {
+    "C:\\alif\\C-sharp\\erm\\src\\Erm.DataAccess\\Erm.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\alif\\C-sharp\\erm\\src\\Erm.DataAccess\\Erm.DataAccess.csproj",
+        "projectUniqueName": "C:\\alif\\C-sharp\\erm\\src\\Erm.DataAccess\\Erm.DataAccess.csproj",
         "projectName": "Erm.DataAccess",
-        "projectPath": "c:\\alif\\C-sharp\\erm\\src\\Erm.DataAccess\\Erm.DataAccess.csproj",
+        "projectPath": "C:\\alif\\C-sharp\\erm\\src\\Erm.DataAccess\\Erm.DataAccess.csproj",
         "packagesPath": "C:\\Users\\islom\\.nuget\\packages\\",
-        "outputPath": "c:\\alif\\C-sharp\\erm\\src\\Erm.DataAccess\\obj\\",
+        "outputPath": "C:\\alif\\C-sharp\\erm\\src\\Erm.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\islom\\AppData\\Roaming\\NuGet\\NuGet.Config"

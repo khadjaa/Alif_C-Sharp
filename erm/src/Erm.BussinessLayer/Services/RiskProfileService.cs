@@ -40,9 +40,21 @@ public sealed class RiskProfileService : IRiskProfileService
         {
             RiskName = profileInfo.Name,
             Description = profileInfo.Description,
-            BusinessProcess = new BusinessProcess { Name = profileInfo.BusinessProcess, Domain = profileInfo.BusinessProcess },
+            BusinessProcess = new BusinessProcess 
+            { 
+                Name = profileInfo.BusinessProcess, 
+                Domain = profileInfo.BusinessProcess 
+            },
             OccurreceProbability = profileInfo.OccurreceProbability,
-            PotentialBusinessImpact = profileInfo.PotentialBusinessImpact
+            PotentialBusinessImpact = profileInfo.PotentialBusinessImpact,
+            Risk = new Risk 
+            {
+                 Name = profileInfo.Risk, 
+                 Description = profileInfo.Risk, 
+                 OccurrenceProbability = profileInfo.OccurreceProbability, 
+                 PotentialBusinessImpact = profileInfo.PotentialBusinessImpact, 
+                 Type = (RiskType)profileInfo.Type
+            }
         });
     }
 
@@ -55,8 +67,8 @@ public sealed class RiskProfileService : IRiskProfileService
     {
         var riskProfile = _riskProfileRepository.Get(riskProfileName);
 
-        double risk = riskProfile.OccurreceProbability * riskProfile.PotentialBusinessImpact;
+        double calculateRiskrisk = riskProfile.OccurreceProbability * riskProfile.PotentialBusinessImpact;
 
-        return risk;
+        return calculateRiskrisk;
     }
 }

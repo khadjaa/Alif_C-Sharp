@@ -20,5 +20,5 @@ public sealed class RiskProfile
             ? throw new ArgumentOutOfRangeException(nameof(value)) : value;
     }
     public string? PotentialSolution {get; set;}
+    public required Risk Risk { get; set; }
 }
-

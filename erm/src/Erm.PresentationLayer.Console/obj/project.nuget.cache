@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "t+sgElYdYKdah5qHmHQF2tT15Bflwz37cZshCwKMct2c+RQhRRIeW7rBk3DCjVOg00WL0Hwvgp8a3tZhPUgQsQ==",
+  "dgSpecHash": "9OnZmhkl2UJI+l88cjpisiGlKQ6Q8toSBRPHVqWnGfahA+ugv0gAQO/MtSi4tHDj/vzbeO1BsRNzsy0JvrepeQ==",
   "success": true,
-  "projectFilePath": "c:\\alif\\C-sharp\\erm\\src\\Erm.PresentationLayer.Console\\Erm.PresentationLayer.Console.csproj",
+  "projectFilePath": "C:\\alif\\C-sharp\\erm\\src\\Erm.PresentationLayer.Console\\Erm.PresentationLayer.Console.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\islom\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\islom\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",

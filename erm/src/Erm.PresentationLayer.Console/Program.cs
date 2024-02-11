@@ -6,6 +6,7 @@ internal class Program
     static void Main()
     {
         IRiskProfileService riskProfileService = new RiskProfileService();
+        IRiskService riskService = new RiskService();
 
         string cmd = String.Empty;
         while (!cmd.Equals(CommandHelper.ExitCommand))
@@ -20,11 +21,52 @@ internal class Program
 
                 switch (cmd)
                 {
+                    case CommandHelper.CreateRiskCommand:
+                        Console.WriteLine("Enter risk name:");
+                        string riskName = Console.ReadLine();
+                        Console.WriteLine("Enter risk description:");
+                        string riskDescription = Console.ReadLine();
+                        int riskOccurreceProbability;
+                        Console.WriteLine("Enter occurrence probability:");
+                        while (!int.TryParse(Console.ReadLine(), out riskOccurreceProbability))
+                        {
+                            Console.WriteLine("Invalid input. Please enter a valid integer value for occurrence probability:");
+                        }
+                        int riskPotentialBusinessImpact;
+                        Console.WriteLine("Enter potential business impact:");
+                        while (!int.TryParse(Console.ReadLine(), out riskPotentialBusinessImpact))
+                        {
+                            Console.WriteLine("Invalid input. Please enter a valid integer value for potential business impact:");
+                        }
+                        RiskType riskType;
+                        Console.WriteLine("Enter risk type:");
+                        while (!Enum.TryParse(Console.ReadLine(), out riskType))
+                        {
+                            Console.WriteLine("Invalid input. Please enter a valid risk type:");
+                        }
+
+                        RiskInfo riskInfo = new()
+                        {
+                            Name = riskName,
+                            Description = riskDescription,
+                            OccurrenceProbability = riskOccurreceProbability,
+                            PotentialBusinessImpact = riskPotentialBusinessImpact,
+                            Type = riskType.ToString()
+                        };
+
+                        riskService.Create(riskInfo);
+                        break;
+                    case CommandHelper.GetRiskCommand:
+                        Console.WriteLine("Enter risk name for get:");
+                        string riskNameToGet = Console.ReadLine();
+                        Risk risk = riskService.Get(riskNameToGet);
+                        Console.WriteLine($"Get name of Risk {risk.Name}");
+                        break;
                     case CommandHelper.GetRiskProfileCommand:
                         Console.WriteLine("Enter risk profile name for get:");
                         string rpNameToGet = Console.ReadLine();
                         RiskProfile riskProfile = riskProfileService.Get(rpNameToGet);
-                        Console.WriteLine($"Get {riskProfile.RiskName}");
+                        Console.WriteLine($"Get name of Risk in RiskProfile {riskProfile.Risk.Name}");
                         break;
                     case CommandHelper.CreateRiskProfileCommand:
                         Console.WriteLine("Enter risk profile name:");
@@ -52,7 +94,9 @@ internal class Program
                             Description = rpDescription,
                             BusinessProcess = rpBusinessProcess,
                             OccurreceProbability = rpOccurreceProbability,
-                            PotentialBusinessImpact = rpPotentialBusinessImpact
+                            PotentialBusinessImpact = rpPotentialBusinessImpact,
+                            Risk = "Risk",
+                            Type = 1
                         };
 
                         riskProfileService.Create(riskProfileInfo);
@@ -140,4 +184,6 @@ file static class CommandHelper
     public const string UpdateRiskProfileCommand = "update_rsf";
     public const string DeleteRiskProfileCommand = "delete_rsf";
     public const string CountRiskProfileCommand = "count_rsf";
+    public const string CreateRiskCommand = "create_risk";
+    public const string GetRiskCommand = "get_risk";
 }

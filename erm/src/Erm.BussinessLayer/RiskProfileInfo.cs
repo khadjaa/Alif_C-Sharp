@@ -4,5 +4,7 @@ public readonly record struct RiskProfileInfo(
     string Description,
     string BusinessProcess,
     int OccurreceProbability,
-    int PotentialBusinessImpact
+    int PotentialBusinessImpact,
+    string Risk,
+    int Type
 );

@@ -15,7 +15,15 @@ internal static class RiskProfileServiceExtensions
                 Domain = profileInfo.BusinessProcess 
             },
             OccurreceProbability = profileInfo.OccurreceProbability,
-            PotentialBusinessImpact = profileInfo.PotentialBusinessImpact
+            PotentialBusinessImpact = profileInfo.PotentialBusinessImpact,
+            Risk = new Risk 
+            {
+                Name = profileInfo.Risk, 
+                Description = profileInfo.Risk, 
+                OccurrenceProbability = profileInfo.OccurreceProbability, 
+                PotentialBusinessImpact = profileInfo.PotentialBusinessImpact, 
+                Type = (RiskType)profileInfo.Type
+            }
         };
     }
 }
