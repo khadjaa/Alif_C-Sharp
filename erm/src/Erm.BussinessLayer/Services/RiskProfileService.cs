@@ -1,16 +1,20 @@
 using Erm.BussinessLayer.Validators;
 using FluentValidation;
 using Erm.DataAccess;
+using AutoMapper;
 
 namespace Erm.BussinessLayer;
 
 public sealed class RiskProfileService : IRiskProfileService
 {
     private readonly IRiskProfileRepository _riskProfileRepository;
-
+    private readonly IMapper _mapper;
+    private readonly RiskProfileInfoValidator _validationRules;
     public RiskProfileService()
     {
         _riskProfileRepository = new RiskProfileRepository();
+        _mapper = AutoMapper.MapperConfiguration.CreateMapper();
+        _validationRules = new();
     }
 
     public RiskProfile Get(string riskProfileName)
@@ -20,10 +24,11 @@ public sealed class RiskProfileService : IRiskProfileService
 
     public void Create(RiskProfileInfo profileInfo)
     {
-        RiskProfileInfoValidator validatorRules = new();
-        validatorRules.ValidateAndThrow(profileInfo);
+        _validationRules.ValidateAndThrow(profileInfo);
 
-        _riskProfileRepository.Create(profileInfo.ToRiskProfile());
+        RiskProfile riskProfile = _mapper.Map<RiskProfile>(profileInfo);
+
+        _riskProfileRepository.Create(riskProfile);
     }
 
     public void Update(string name, RiskProfileInfo profileInfo)
@@ -53,24 +58,5 @@ public sealed class RiskProfileService : IRiskProfileService
         double risk = riskProfile.OccurreceProbability * riskProfile.PotentialBusinessImpact;
 
         return risk;
-    }
-}
-
-internal static class RiskProfileServiceExtensions
-{
-    public static RiskProfile ToRiskProfile(this RiskProfileInfo profileInfo) 
-    {
-        return new RiskProfile
-        {
-            RiskName = profileInfo.Name,
-            Description = profileInfo.Description,
-            BusinessProcess = new BusinessProcess 
-            { 
-                Name = profileInfo.BusinessProcess, 
-                Domain = profileInfo.BusinessProcess 
-            },
-            OccurreceProbability = profileInfo.OccurreceProbability,
-            PotentialBusinessImpact = profileInfo.PotentialBusinessImpact
-        };
     }
 }

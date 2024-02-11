@@ -1,10 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "rfkOmFyCEcXBxu8VY8r8OtRHFwzMV+4lt3sjZ8gaBJ+bIX8fc67Gfc3MMX3fYFrbH9q6rod8HV2Ezui9ezBg9A==",
+  "dgSpecHash": "M9kf+U4aiSC9l8OkwcaZtoFakW6SL0x4XqVlauFatFEloJ6E1btVSwb8YhgpDZF9ceWw49lxs6z3HRRRolvHhw==",
   "success": true,
-  "projectFilePath": "C:\\alif\\C-sharp\\erm\\src\\Erm.BussinessLayer\\Erm.BussinessLayer.csproj",
+  "projectFilePath": "c:\\alif\\C-sharp\\erm\\src\\Erm.BussinessLayer\\Erm.BussinessLayer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\islom\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512"
+    "C:\\Users\\islom\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
+    "C:\\Users\\islom\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\islom\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\islom\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\islom\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\islom\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

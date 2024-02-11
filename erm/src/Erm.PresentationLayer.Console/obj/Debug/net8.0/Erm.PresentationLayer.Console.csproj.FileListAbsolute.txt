@@ -20,3 +20,7 @@ C:\alif\C-sharp\erm\src\Erm.PresentationLayer.Console\obj\Debug\net8.0\Erm.Prese
 C:\alif\C-sharp\erm\src\Erm.PresentationLayer.Console\obj\Debug\net8.0\Erm.PresentationLayer.Console.genruntimeconfig.cache
 C:\alif\C-sharp\erm\src\Erm.PresentationLayer.Console\obj\Debug\net8.0\ref\Erm.PresentationLayer.Console.dll
 c:\alif\C-sharp\erm\src\Erm.PresentationLayer.Console\bin\Debug\net8.0\FluentValidation.dll
+C:\alif\C-sharp\erm\src\Erm.PresentationLayer.Console\bin\Debug\net8.0\AutoMapper.dll
+C:\alif\C-sharp\erm\src\Erm.PresentationLayer.Console\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\alif\C-sharp\erm\src\Erm.PresentationLayer.Console\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\alif\C-sharp\erm\src\Erm.PresentationLayer.Console\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
