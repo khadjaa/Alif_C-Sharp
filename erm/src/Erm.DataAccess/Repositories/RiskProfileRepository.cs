@@ -1,3 +1,4 @@
+
 namespace Erm.DataAccess;
 
 public sealed class RiskProfileRepository : IRiskProfileRepository
@@ -46,5 +47,10 @@ public sealed class RiskProfileRepository : IRiskProfileRepository
             Console.WriteLine($"DELETE {existingRiskProfile.RiskName}");
             _db.Remove(existingRiskProfile);
         }
+    }
+
+    public IEnumerable<RiskProfile> GetAll(string query)
+    {
+        return _db.Where(x => x.RiskName.Contains(query) || x.Description.Contains(query));
     }
 }

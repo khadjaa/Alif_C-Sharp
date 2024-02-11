@@ -20,6 +20,9 @@ public class RiskProfileInfoProfile : Profile
                     Type = (RiskType)src.Type 
                 }))
             .ForMember(dest => dest.BusinessProcess, 
-                opt => opt.MapFrom(src => new BusinessProcess { Name = src.BusinessProcess, Domain = src.BusinessProcess }));
+                opt => opt.MapFrom(src => new BusinessProcess { Name = src.BusinessProcess, Domain = src.BusinessProcess }))
+                .ReverseMap()
+                .ForMember(dest => dest.BusinessProcess, opt => opt.MapFrom(src => src.BusinessProcess.Name))
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.RiskName));
     }
 }

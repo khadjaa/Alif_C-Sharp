@@ -148,6 +148,7 @@ internal class Program
                         Console.WriteLine(CommandHelper.UpdateRiskProfileCommand);
                         Console.WriteLine(CommandHelper.DeleteRiskProfileCommand);
                         Console.WriteLine(CommandHelper.CountRiskProfileCommand);
+                        Console.WriteLine(CommandHelper.QueryRiskProfileCommand);
                         break;
                     case CommandHelper.ExitCommand:
                         Console.WriteLine("Exiting...");
@@ -157,6 +158,15 @@ internal class Program
                         string rlNameToCount = Console.ReadLine();
                         double count = riskProfileService.CalculateRisk(rlNameToCount);
                         Console.WriteLine($"Count {count}");
+                        break;
+                    case CommandHelper.QueryRiskProfileCommand:
+                        Console.WriteLine("Enter query:");
+                        string query = Console.ReadLine();
+                        IEnumerable<RiskProfileInfo> riskProfileInfos = riskProfileService.Query(query);
+                        foreach (RiskProfileInfo item in riskProfileInfos)
+                        {
+                            Console.WriteLine(item);
+                        }
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
@@ -186,4 +196,5 @@ file static class CommandHelper
     public const string CountRiskProfileCommand = "count_rsf";
     public const string CreateRiskCommand = "create_risk";
     public const string GetRiskCommand = "get_risk";
+    public const string QueryRiskProfileCommand = "search_profile";
 }

@@ -71,4 +71,13 @@ public sealed class RiskProfileService : IRiskProfileService
 
         return calculateRiskrisk;
     }
+
+    public IEnumerable<RiskProfileInfo> Query(string query)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(query);
+
+        IEnumerable<RiskProfile> riskProfiles = _riskProfileRepository.GetAll(query);
+
+        return _mapper.Map<IEnumerable<RiskProfileInfo>>(riskProfiles);
+    }
 }
