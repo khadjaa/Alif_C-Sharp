@@ -1,14 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "9OnZmhkl2UJI+l88cjpisiGlKQ6Q8toSBRPHVqWnGfahA+ugv0gAQO/MtSi4tHDj/vzbeO1BsRNzsy0JvrepeQ==",
+  "dgSpecHash": "fP3h21phUEyUttB9mcEGzkBRXt8gcFcCG/nImYFq9t/ggeEz31eBen0IDfQSX58CzCCaSxH0Ep0ZOzqdsZgciw==",
   "success": true,
   "projectFilePath": "C:\\alif\\C-sharp\\erm\\src\\Erm.PresentationLayer.Console\\Erm.PresentationLayer.Console.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\islom\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\islom\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
     "C:\\Users\\islom\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\islom\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\islom\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\islom\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\islom\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "C:\\Users\\islom\\.nuget\\packages\\stackexchange.redis\\2.7.27\\stackexchange.redis.2.7.27.nupkg.sha512",
+    "C:\\Users\\islom\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
     "C:\\Users\\islom\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []

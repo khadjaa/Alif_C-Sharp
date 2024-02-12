@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "vOddFKfIROjUOgd15q5xgHYNaud/blPkGioiYAzqICFdpVTstPSPO1T31cdIgZkudZSm/87bsr5LhjHqY0txAQ==",
+  "dgSpecHash": "nseRhK2VxPTiE5PxwAIVLLMLNPIRpj7gEPLzo20Pja9xJCJWWE/p5DliOmN2JOF6jdpj3fvCF19cqWNOjHnTtA==",
   "success": true,
   "projectFilePath": "C:\\alif\\C-sharp\\erm\\src\\Erm.DataAccess\\Erm.DataAccess.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\islom\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\islom\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "C:\\Users\\islom\\.nuget\\packages\\stackexchange.redis\\2.7.27\\stackexchange.redis.2.7.27.nupkg.sha512",
+    "C:\\Users\\islom\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
