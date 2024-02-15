@@ -1,0 +1,59 @@
+1.  Создайте две таблицы, сотрудники и отделы, в каждой из которых есть соответствующие 
+столбцы (например, employee_id, department_id, name и т. д.).
+Заполните таблицы образцами данных.
+
+CREATE TABLE Employees (
+    employee_id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    department_id INT
+);
+
+CREATE TABLE Departments (
+    department_id SERIAL PRIMARY KEY,
+    department_name VARCHAR(100)
+);
+
+INSERT INTO Departments (department_name) VALUES 
+('HR'),
+('Finance'),
+('IT');
+
+INSERT INTO Employees (name, department_id) VALUES
+('John Doe', 1),
+('Jane Smith', 2),
+('Michael Johnson', 3),
+('Emily Brown', 1),
+('David Williams', NULL);
+
+2.  Напишите SQL-запрос с использованием INNER JOIN, чтобы получить список сотрудников 
+и соответствующие им названия отделов.
+Включите такие столбцы, как employee_id, employee_name, department_id и department_name.
+Убедитесь, что в набор результатов включены только совпадающие записи.
+
+SELECT e.employee_id, e.name AS employee_name, e.department_id, d.department_name
+FROM Employees e
+INNER JOIN Departments d ON e.department_id = d.department_id;
+
+3.  Установите ПОЛНУЮ ВНЕШНЮЮ СВЯЗЬ между таблицами Employees и Departments.
+Выведите список всех сотрудников и информацию об их отделах, независимо от того, есть ли совпадение.
+Включите столбцы для обеих таблиц и соответствующим образом обработайте значения NULL.
+
+SELECT e.employee_id, e.name AS employee_name, e.department_id, d.department_name
+FROM Employees e
+FULL OUTER JOIN Departments d ON e.department_id = d.department_id;
+
+4.  Используйте LEFT JOIN для поиска сотрудников, у которых может совпадать или не совпадать отдел.
+Получите такие столбцы, как employee_id, employee_name и department_name.
+Решите проблемы, когда для сотрудника может не быть соответствующего отдела.
+
+SELECT e.employee_id, e.name AS employee_name, d.department_name
+FROM Employees e
+LEFT JOIN Departments d ON e.department_id = d.department_id;
+
+5.  Используйте RIGHT JOIN для получения данных об отделах и связанных с ними сотрудниках.
+Включите такие столбцы, как department_id, department_name, и информацию, связанную с сотрудниками.
+Разберитесь с ситуацией, когда может существовать отдел без назначенных сотрудников.
+
+SELECT d.department_id, d.department_name, e.employee_id, e.name AS employee_name
+FROM Departments d
+RIGHT JOIN Employees e ON e.department_id = d.department_id;
