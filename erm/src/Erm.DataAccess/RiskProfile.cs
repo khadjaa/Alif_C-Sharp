@@ -4,6 +4,8 @@ public sealed class RiskProfile
 {
     private int _occurreceProbability;
     private int _potentialBusinessImpact;
+    public int Id {get; set;}
+    public int BusinessProcessId {get; set;}
     public required string RiskName {get; set;}
     public string? Description {get; set;}
     public required BusinessProcess BusinessProcess {get; set;}

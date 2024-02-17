@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Erm.PresentationLayer.Console")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2eba15f4a69f3a1ced5ca3cf894009831b28e755")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f737eccf54723c9592a9b413d20653b7b43c45ed")]
 [assembly: System.Reflection.AssemblyProductAttribute("Erm.PresentationLayer.Console")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Erm.PresentationLayer.Console")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

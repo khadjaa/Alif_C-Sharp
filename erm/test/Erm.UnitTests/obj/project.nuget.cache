@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rBoZa6GKQZTUL3waIWNDS6Pw9J0Bq6weXmLk0WipnMciveT81KnrlyDnf3ptq6f6pRSm4VTWv36k0Zz7u8fj0A==",
+  "dgSpecHash": "Bnz8f22N5ZK2ouIGhiAn9UxoNGjPjhgnUvlrlwJePNxM0/Aoq+eI9Bptq5+JdxpJrNUYB5lMKtj+iPtYLceUsw==",
   "success": true,
   "projectFilePath": "C:\\alif\\C-sharp\\erm\\test\\Erm.UnitTests\\Erm.UnitTests.csproj",
   "expectedPackageFiles": [
@@ -93,9 +93,9 @@
     "C:\\Users\\islom\\.nuget\\packages\\xunit.extensibility.core\\2.4.2\\xunit.extensibility.core.2.4.2.nupkg.sha512",
     "C:\\Users\\islom\\.nuget\\packages\\xunit.extensibility.execution\\2.4.2\\xunit.extensibility.execution.2.4.2.nupkg.sha512",
     "C:\\Users\\islom\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.5\\xunit.runner.visualstudio.2.4.5.nupkg.sha512",
-    "C:\\Users\\islom\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
-    "C:\\Users\\islom\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512",
-    "C:\\Users\\islom\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.16\\microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512"
+    "C:\\Users\\islom\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.17\\microsoft.netcore.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\islom\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.17\\microsoft.windowsdesktop.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\islom\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.17\\microsoft.aspnetcore.app.ref.7.0.17.nupkg.sha512"
   ],
   "logs": []
 }
