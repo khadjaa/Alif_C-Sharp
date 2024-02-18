@@ -10,4 +10,13 @@ public sealed class ErmDbContext : DbContext
     {
         optionsBuilder.UseSqlServer(ConnectionString);
     }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<RiskProfile>()
+        .ToTable("risk_profile");
+        
+       modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+    }
 }
+
