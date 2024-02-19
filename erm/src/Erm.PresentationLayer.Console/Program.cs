@@ -14,7 +14,7 @@ internal class Program
 
             try
             {
-                Console.ForegroundColor = ConsoleColor.White;
+                // Console.ForegroundColor = ConsoleColor.White;
 
                 Console.WriteLine(CommandHelper.InputSymbol);
                 cmd = Console.ReadLine();
@@ -169,13 +169,13 @@ internal class Program
                         }
                         break;
                     default:
-                        Console.ForegroundColor = ConsoleColor.Red;
+                        // Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine(CommandHelper.UnknownCommandMessage);
                         break;
                 }
             } catch (Exception ex)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
+                // Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(CommandHelper.InputSymbol + ex.Message);
             }   
         }

@@ -1,6 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
 namespace Erm.DataAccess;
 
-public sealed RiskProfileConfiguration : IEntityTypeConfiguration<RiskProfile>
+public sealed class RiskProfileConfiguration : IEntityTypeConfiguration<RiskProfile>
 {
     public void Configure(EntityTypeBuilder<RiskProfile> builder)
     {
@@ -47,8 +50,8 @@ public sealed RiskProfileConfiguration : IEntityTypeConfiguration<RiskProfile>
         .IsRequired();
 
         builder
-        .Property(bp => bp.BusinessProcessId)
-        .HasColumnName("business_process_id")
+            .Property(bp => bp.BusinessProcessId)
+            .HasColumnName("business_process_id");
 
         builder.HasKey(k => k.Id);
     }

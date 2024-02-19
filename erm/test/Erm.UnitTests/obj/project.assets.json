@@ -5517,19 +5517,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\islom\\.nuget\\packages\\": {}
+    "C:\\Users\\PC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\alif\\C-sharp\\erm\\test\\Erm.UnitTests\\Erm.UnitTests.csproj",
+      "projectUniqueName": "D:\\csharp\\Alif_C-Sharp\\erm\\test\\Erm.UnitTests\\Erm.UnitTests.csproj",
       "projectName": "Erm.UnitTests",
-      "projectPath": "C:\\alif\\C-sharp\\erm\\test\\Erm.UnitTests\\Erm.UnitTests.csproj",
-      "packagesPath": "C:\\Users\\islom\\.nuget\\packages\\",
-      "outputPath": "C:\\alif\\C-sharp\\erm\\test\\Erm.UnitTests\\obj\\",
+      "projectPath": "D:\\csharp\\Alif_C-Sharp\\erm\\test\\Erm.UnitTests\\Erm.UnitTests.csproj",
+      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+      "outputPath": "D:\\csharp\\Alif_C-Sharp\\erm\\test\\Erm.UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\islom\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -5547,11 +5547,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -5593,15 +5588,15 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[7.0.17, 7.0.17]"
+            "version": "[7.0.16, 7.0.16]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[7.0.17, 7.0.17]"
+            "version": "[7.0.16, 7.0.16]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[7.0.17, 7.0.17]"
+            "version": "[7.0.16, 7.0.16]"
           }
         ],
         "frameworkReferences": {
@@ -5609,7 +5604,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

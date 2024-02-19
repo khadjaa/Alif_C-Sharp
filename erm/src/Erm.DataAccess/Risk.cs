@@ -9,6 +9,7 @@ public enum RiskType
 
 public class Risk
 {
+    public int Id { get; set; }
     public required string Name { get; set; } 
     public required string Description { get; set; } 
     public RiskType Type { get; set; }

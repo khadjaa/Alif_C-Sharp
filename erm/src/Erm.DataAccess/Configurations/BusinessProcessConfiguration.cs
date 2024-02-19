@@ -1,6 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
 namespace Erm.DataAccess;
 
-public sealed BusinessProcessConfiguration : IEntityTypeConfiguration<BusinessProcess>
+public sealed class BusinessProcessConfiguration : IEntityTypeConfiguration<BusinessProcess>
 {
     public void Configure(EntityTypeBuilder<BusinessProcess> builder)
     {

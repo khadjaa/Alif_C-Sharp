@@ -1,3 +1,7 @@
+using System.Reflection;
+
+using Microsoft.EntityFrameworkCore;
+
 namespace Erm.DataAccess;
 
 public sealed class ErmDbContext : DbContext

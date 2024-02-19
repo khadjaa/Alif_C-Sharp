@@ -2954,19 +2954,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\islom\\.nuget\\packages\\": {}
+    "C:\\Users\\PC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\alif\\C-sharp\\erm\\src\\Erm.BussinessLayer\\Erm.BussinessLayer.csproj",
+      "projectUniqueName": "D:\\csharp\\Alif_C-Sharp\\erm\\src\\Erm.BussinessLayer\\Erm.BussinessLayer.csproj",
       "projectName": "Erm.BussinessLayer",
-      "projectPath": "C:\\alif\\C-sharp\\erm\\src\\Erm.BussinessLayer\\Erm.BussinessLayer.csproj",
-      "packagesPath": "C:\\Users\\islom\\.nuget\\packages\\",
-      "outputPath": "C:\\alif\\C-sharp\\erm\\src\\Erm.BussinessLayer\\obj\\",
+      "projectPath": "D:\\csharp\\Alif_C-Sharp\\erm\\src\\Erm.BussinessLayer\\Erm.BussinessLayer.csproj",
+      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+      "outputPath": "D:\\csharp\\Alif_C-Sharp\\erm\\src\\Erm.BussinessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\islom\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -2978,8 +2978,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\alif\\C-sharp\\erm\\src\\Erm.DataAccess\\Erm.DataAccess.csproj": {
-              "projectPath": "C:\\alif\\C-sharp\\erm\\src\\Erm.DataAccess\\Erm.DataAccess.csproj"
+            "D:\\csharp\\Alif_C-Sharp\\erm\\src\\Erm.DataAccess\\Erm.DataAccess.csproj": {
+              "projectPath": "D:\\csharp\\Alif_C-Sharp\\erm\\src\\Erm.DataAccess\\Erm.DataAccess.csproj"
             }
           }
         }
@@ -3024,7 +3024,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
