@@ -15,7 +15,7 @@ public sealed class RiskProfileRepository : IRiskProfileRepository
 
     public RiskProfile Get(string name)
     {
-        return _db.RiskProfiles.AsNoTracking().Single(x => x.RiskName == name);
+        return _db.RiskProfiles.AsNoTracking().Include(i => i.BusinessProcess).Single(x => x.RiskName == name);
     }
 
     public void Update(string name, RiskProfile riskProfile)
@@ -60,6 +60,6 @@ public sealed class RiskProfileRepository : IRiskProfileRepository
 
     public IEnumerable<RiskProfile> GetAll(string query)
     {
-        return _db.RiskProfiles.AsNoTracking().Where(x => x.RiskName.Contains(query) || x.Description.Contains(query));
+        return _db.RiskProfiles.AsNoTracking().Include(i => i.BusinessProcess).Where(x => x.RiskName.Contains(query) || x.Description.Contains(query));
     }
 }

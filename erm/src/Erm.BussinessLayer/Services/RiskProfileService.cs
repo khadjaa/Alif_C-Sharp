@@ -12,14 +12,15 @@ public sealed class RiskProfileService : IRiskProfileService
     private readonly RiskProfileInfoValidator _validationRules;
     public RiskProfileService()
     {
-        _riskProfileRepository = new RiskProfileRepository();
+        _riskProfileRepository = new RiskProfileRepositoryProxy(new RiskProfileRepository());
         _mapper = AutoMapper.MapperConfiguration.CreateMapper();
         _validationRules = new();
     }
 
-    public RiskProfile Get(string riskProfileName)
+    public RiskProfileInfo Get(string riskProfileName)
     {
-        return _riskProfileRepository.Get(riskProfileName);
+        ArgumentException.ThrowIfNullOrEmpty(riskProfileName);
+        return _mapper.Map<RiskProfileInfo>(_riskProfileRepository.Get(riskProfileName));
     }
 
     public void Create(RiskProfileInfo profileInfo)

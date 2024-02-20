@@ -32,15 +32,20 @@ public sealed class RiskProfileRepositoryProxy : IRiskProfileRepository
     {
         RedisValue redisValue = _redisDb.StringGet(name);
         if (redisValue.IsNullOrEmpty)
-        {
-            return _originalRepository.Get(name);
+        { 
+            RiskProfile riskProfileFromDb = _originalRepository.Get(name);
+            string redisRiskProfileJson = JsonSerializer.Serialize(riskProfileFromDb);
+
+            _redisDb.StringSet(name, redisRiskProfileJson);
+            Console.WriteLine("from sql");
+            return riskProfileFromDb;
         }
 
         string redisProfileJsonStr = redisValue.ToString();
 
         RiskProfile riskProfile = JsonSerializer.Deserialize<RiskProfile>(redisProfileJsonStr)
             ?? throw new InvalidOperationException("Failed to deserialize RiskProfile from Redis");
-
+        Console.WriteLine("from redis");
         return riskProfile;
     }
 

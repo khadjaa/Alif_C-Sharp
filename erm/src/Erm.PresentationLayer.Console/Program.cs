@@ -65,8 +65,8 @@ internal class Program
                     case CommandHelper.GetRiskProfileCommand:
                         Console.WriteLine("Enter risk profile name for get:");
                         string rpNameToGet = Console.ReadLine();
-                        RiskProfile riskProfile = riskProfileService.Get(rpNameToGet);
-                        Console.WriteLine($"Get name of Risk in RiskProfile {riskProfile.Risk.Name}");
+                        RiskProfileInfo riskProfile = riskProfileService.Get(rpNameToGet);
+                        Console.WriteLine($"Get name of Risk in RiskProfile {riskProfile.Name}");
                         break;
                     case CommandHelper.CreateRiskProfileCommand:
                         Console.WriteLine("Enter risk profile name:");
