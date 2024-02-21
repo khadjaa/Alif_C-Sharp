@@ -15,7 +15,7 @@ public sealed class RiskProfileRepository : IRiskProfileRepository
 
     public RiskProfile Get(string name)
     {
-        return _db.RiskProfiles.AsNoTracking().Include(i => i.BusinessProcess).Single(x => x.RiskName == name);
+        return _db.RiskProfiles.AsNoTracking().Single(x => x.RiskName == name);
     }
 
     public void Update(string name, RiskProfile riskProfile)
@@ -29,31 +29,10 @@ public sealed class RiskProfileRepository : IRiskProfileRepository
         riskProfileToUpdate.PotentialBusinessImpact = riskProfile.PotentialBusinessImpact;
 
         _db.SaveChanges();
-        
-        // RiskProfile existingRiskProfile = Get(name);
-        // Console.WriteLine($"BEFORE UPDATE {existingRiskProfile.RiskName}");
-        // if (existingRiskProfile != null)
-        // {
-        //     Console.WriteLine($"UPDATE {existingRiskProfile.RiskName}");
-        //
-        //     existingRiskProfile.RiskName = riskProfile.RiskName;
-        //     existingRiskProfile.Description = riskProfile.Description;
-        //     existingRiskProfile.BusinessProcess = riskProfile.BusinessProcess;
-        //     existingRiskProfile.OccurreceProbability = riskProfile.OccurreceProbability;
-        //     existingRiskProfile.PotentialBusinessImpact = riskProfile.PotentialBusinessImpact;
-        //
-        //     Console.WriteLine($"AFTER UPDATE {existingRiskProfile.RiskName}");
-        // }
     }
 
     public void Delete(string name)
     {
-        // RiskProfile existingRiskProfile = _db.RiskProfiles.Single(x => x.RiskName == name);
-        // if (existingRiskProfile != null)
-        // {
-        //     Console.WriteLine($"DELETE {existingRiskProfile.RiskName}");
-        //     _db.RiskProfiles.Remove(existingRiskProfile);
-        // }
         _db.RiskProfiles.Where(x => x.RiskName.Equals(name)).ExecuteDelete();
         _db.SaveChanges();
     }
