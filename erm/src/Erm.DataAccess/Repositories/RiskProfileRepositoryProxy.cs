@@ -18,25 +18,25 @@ public sealed class RiskProfileRepositoryProxy : IRiskProfileRepository
         _redisDb = connectionMultiplexer.GetDatabase();
     }
  
-    public void Create(RiskProfile entity)
+    public Task CreateAsync(RiskProfile entity, CancellationToken token = default)
     {
-        _originalRepository.Create(entity);
+        return _originalRepository.CreateAsync(entity, token);
     }
 
-    public void Delete(string name)
+    public Task DeleteAsync(string name, CancellationToken token = default)
     {
-        _originalRepository.Delete(name);
+        return _originalRepository.DeleteAsync(name, token);
     }
 
-    public RiskProfile Get(string name)
+    public async Task<RiskProfile> GetAsync(string name, CancellationToken token = default)
     {
-        RedisValue redisValue = _redisDb.StringGet(name);
+        RedisValue redisValue = await _redisDb.StringGetAsync(name);
         if (redisValue.IsNullOrEmpty)
         { 
-            RiskProfile riskProfileFromDb = _originalRepository.Get(name);
+            RiskProfile riskProfileFromDb = await _originalRepository.GetAsync(name, token);
             string redisRiskProfileJson = JsonSerializer.Serialize(riskProfileFromDb);
 
-            _redisDb.StringSet(name, redisRiskProfileJson);
+            await _redisDb.StringSetAsync(name, redisRiskProfileJson);
             Console.WriteLine("from sql");
             return riskProfileFromDb;
         }
@@ -49,13 +49,13 @@ public sealed class RiskProfileRepositoryProxy : IRiskProfileRepository
         return riskProfile;
     }
 
-    public IEnumerable<RiskProfile> GetAll(string query)
+    public Task<IEnumerable<RiskProfile>> GetAllAsync(string query, CancellationToken token = default)
     {
-        return _originalRepository.GetAll(query);
+        return _originalRepository.GetAllAsync(query, token);
     }
 
-    public void Update(string name, RiskProfile riskProfile)
+    public Task UpdateAsync(string name, RiskProfile riskProfile, CancellationToken token = default)
     {
-        _originalRepository.Update(name, riskProfile);
+       return _originalRepository.UpdateAsync(name, riskProfile, token);
     }
 }

@@ -7,20 +7,20 @@ public sealed class RiskProfileRepository : IRiskProfileRepository
 {
     private readonly ErmDbContext _db = new();
 
-    public void Create(RiskProfile entity)
+    public async Task CreateAsync(RiskProfile entity, CancellationToken token = default)
     {
-        _db.RiskProfiles.Add(entity);
-        _db.SaveChanges();
+        await _db.RiskProfiles.AddAsync(entity, token);
+        await _db.SaveChangesAsync(token);
     }
 
-    public RiskProfile Get(string name)
+    public Task<RiskProfile> GetAsync(string name, CancellationToken token = default)
     {
-        return _db.RiskProfiles.AsNoTracking().Single(x => x.RiskName == name);
+       return _db.RiskProfiles.AsNoTracking().SingleAsync(x => x.RiskName.Equals(name), token);
     }
 
-    public void Update(string name, RiskProfile riskProfile)
+    public async Task UpdateAsync(string name, RiskProfile riskProfile, CancellationToken token = default)
     {
-        RiskProfile riskProfileToUpdate =  _db.RiskProfiles.Single(x => x.RiskName == name);
+        RiskProfile riskProfileToUpdate =  await _db.RiskProfiles.SingleAsync(x => x.RiskName == name, token);
         
         riskProfileToUpdate.RiskName = riskProfile.RiskName;
         riskProfileToUpdate.Description = riskProfile.Description;
@@ -28,17 +28,21 @@ public sealed class RiskProfileRepository : IRiskProfileRepository
         riskProfileToUpdate.OccurreceProbability = riskProfile.OccurreceProbability;
         riskProfileToUpdate.PotentialBusinessImpact = riskProfile.PotentialBusinessImpact;
 
-        _db.SaveChanges();
+        await _db.SaveChangesAsync(token);
     }
 
-    public void Delete(string name)
+    public async Task DeleteAsync(string name, CancellationToken token = default)
     {
-        _db.RiskProfiles.Where(x => x.RiskName.Equals(name)).ExecuteDelete();
-        _db.SaveChanges();
+        await _db.RiskProfiles.Where(x => x.RiskName.Equals(name)).ExecuteDeleteAsync(token);
+        await _db.SaveChangesAsync(token);
     }
 
-    public IEnumerable<RiskProfile> GetAll(string query)
+    public async Task<IEnumerable<RiskProfile>> GetAllAsync(string query, CancellationToken token = default)
     {
-        return _db.RiskProfiles.AsNoTracking().Include(i => i.BusinessProcess).Where(x => x.RiskName.Contains(query) || x.Description.Contains(query));
+        return await _db.RiskProfiles
+            .AsNoTracking()
+            .Include(i => i.BusinessProcess)
+            .Where(x => x.RiskName.Contains(query) || x.Description.Contains(query))
+            .ToArrayAsync(token);
     }
 }

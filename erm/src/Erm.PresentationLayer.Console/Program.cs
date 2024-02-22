@@ -3,7 +3,7 @@ using Erm.DataAccess;
 
 internal class Program 
 {
-    static void Main()
+    static async Task<int> Main()
     {
         IRiskProfileService riskProfileService = new RiskProfileService();
         IRiskService riskService = new RiskService();
@@ -11,12 +11,11 @@ internal class Program
         string cmd = String.Empty;
         while (!cmd.Equals(CommandHelper.ExitCommand))
         {
-
             try
             {
                 // Console.ForegroundColor = ConsoleColor.White;
 
-                Console.WriteLine(CommandHelper.InputSymbol);
+                Console.Write(CommandHelper.InputSymbol);
                 cmd = Console.ReadLine();
 
                 switch (cmd)
@@ -65,7 +64,7 @@ internal class Program
                     case CommandHelper.GetRiskProfileCommand:
                         Console.WriteLine("Enter risk profile name for get:");
                         string rpNameToGet = Console.ReadLine();
-                        RiskProfileInfo riskProfile = riskProfileService.Get(rpNameToGet);
+                        RiskProfileInfo riskProfile = await riskProfileService.GetAsync(rpNameToGet);
                         Console.WriteLine($"Get name of Risk in RiskProfile {riskProfile.Name}");
                         break;
                     case CommandHelper.CreateRiskProfileCommand:
@@ -99,7 +98,7 @@ internal class Program
                             Type = 1
                         };
 
-                        riskProfileService.Create(riskProfileInfo);
+                        await riskProfileService.CreateAsync(riskProfileInfo);
                         break;
                     case CommandHelper.UpdateRiskProfileCommand:
                         Console.WriteLine("Enter risk profile name for update:");
@@ -132,12 +131,12 @@ internal class Program
                             PotentialBusinessImpact = rpPotentialBusinessImpactToUpdate
                         };
 
-                        riskProfileService.Update(rpNameToUpdate, riskProfileInfoToUpdate);
+                        await riskProfileService.UpdateAsync(rpNameToUpdate, riskProfileInfoToUpdate);
                         break;
                     case CommandHelper.DeleteRiskProfileCommand: 
                         Console.WriteLine("Enter risk profile name for delete:");
                         string rpNameToDelete = Console.ReadLine();
-                        riskProfileService.Delete(rpNameToDelete);
+                        await riskProfileService.DeleteAsync(rpNameToDelete);
                         break;
                     case CommandHelper.HelpCommand:
                         Console.WriteLine("> Available commands:");
@@ -156,13 +155,13 @@ internal class Program
                     case CommandHelper.CountRiskProfileCommand:
                         Console.WriteLine("Enter risk level name for count:");
                         string rlNameToCount = Console.ReadLine();
-                        double count = riskProfileService.CalculateRisk(rlNameToCount);
+                        double count = await riskProfileService.CalculateRiskAsync(rlNameToCount);
                         Console.WriteLine($"Count {count}");
                         break;
                     case CommandHelper.QueryRiskProfileCommand:
                         Console.WriteLine("Enter query:");
                         string query = Console.ReadLine();
-                        IEnumerable<RiskProfileInfo> riskProfileInfos = riskProfileService.Query(query);
+                        IEnumerable<RiskProfileInfo> riskProfileInfos = await riskProfileService.QueryAsync(query);
                         foreach (RiskProfileInfo item in riskProfileInfos)
                         {
                             Console.WriteLine(item);
@@ -179,6 +178,8 @@ internal class Program
                 Console.WriteLine(CommandHelper.InputSymbol + ex.Message);
             }   
         }
+
+        return 0;
     }
 }
 

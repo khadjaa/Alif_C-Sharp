@@ -2,9 +2,9 @@ namespace Erm.DataAccess;
 
 public interface IRiskProfileRepository
 {
-    public RiskProfile Get(string name);
-    public IEnumerable<RiskProfile> GetAll(string query);
-    public void Create(RiskProfile entity);
-    void Update(string name, RiskProfile riskProfile);
-    void Delete(string name);
+    public Task<RiskProfile> GetAsync(string name, CancellationToken token = default);
+    public Task<IEnumerable<RiskProfile>> GetAllAsync(string query, CancellationToken token = default);
+    public Task CreateAsync(RiskProfile entity, CancellationToken token = default);
+    Task UpdateAsync(string name, RiskProfile riskProfile, CancellationToken token = default);
+    Task DeleteAsync(string name, CancellationToken token = default);
 }

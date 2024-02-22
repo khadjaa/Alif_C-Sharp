@@ -17,27 +17,27 @@ public sealed class RiskProfileService : IRiskProfileService
         _validationRules = new();
     }
 
-    public RiskProfileInfo Get(string riskProfileName)
+    public async Task<RiskProfileInfo> GetAsync(string riskProfileName, CancellationToken token = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(riskProfileName);
-        return _mapper.Map<RiskProfileInfo>(_riskProfileRepository.Get(riskProfileName));
+        return _mapper.Map<RiskProfileInfo>(await _riskProfileRepository.GetAsync(riskProfileName, token));
     }
 
-    public void Create(RiskProfileInfo profileInfo)
+    public async Task CreateAsync(RiskProfileInfo profileInfo, CancellationToken token = default)
     {
-        _validationRules.ValidateAndThrow(profileInfo);
+        await _validationRules.ValidateAndThrowAsync(profileInfo, token);
 
         RiskProfile riskProfile = _mapper.Map<RiskProfile>(profileInfo);
 
-        _riskProfileRepository.Create(riskProfile);
+        await _riskProfileRepository.CreateAsync(riskProfile, token);
     }
 
-    public void Update(string name, RiskProfileInfo profileInfo)
+    public async Task UpdateAsync(string name, RiskProfileInfo profileInfo, CancellationToken token = default)
     {
         RiskProfileInfoValidator validatorRules = new();
-        validatorRules.ValidateAndThrow(profileInfo);
+        await validatorRules.ValidateAndThrowAsync(profileInfo, token);
 
-        _riskProfileRepository.Update(name, new RiskProfile
+        await _riskProfileRepository.UpdateAsync(name, new RiskProfile
         {
             RiskName = profileInfo.Name,
             Description = profileInfo.Description,
@@ -56,28 +56,28 @@ public sealed class RiskProfileService : IRiskProfileService
                  PotentialBusinessImpact = profileInfo.PotentialBusinessImpact, 
                  Type = (RiskType)profileInfo.Type
             }
-        });
+        }, token);
     }
 
-    public void Delete(string riskProfileName)
+    public async Task DeleteAsync(string riskProfileName, CancellationToken token = default)
     {
-        _riskProfileRepository.Delete(riskProfileName);
+        await _riskProfileRepository.DeleteAsync(riskProfileName, token);
     }
 
-    public double CalculateRisk(string riskProfileName)
+    public async Task<double> CalculateRiskAsync(string riskProfileName)
     {
-        var riskProfile = _riskProfileRepository.Get(riskProfileName);
+        var riskProfile = await _riskProfileRepository.GetAsync(riskProfileName);
 
-        double calculateRiskrisk = riskProfile.OccurreceProbability * riskProfile.PotentialBusinessImpact;
+        double calculateRisk = riskProfile.OccurreceProbability * riskProfile.PotentialBusinessImpact;
 
-        return calculateRiskrisk;
+        return calculateRisk;
     }
 
-    public IEnumerable<RiskProfileInfo> Query(string query)
+    public async Task<IEnumerable<RiskProfileInfo>> QueryAsync(string query, CancellationToken token = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(query);
 
-        IEnumerable<RiskProfile> riskProfiles = _riskProfileRepository.GetAll(query);
+        IEnumerable<RiskProfile> riskProfiles = await _riskProfileRepository.GetAllAsync(query, token);
 
         return _mapper.Map<IEnumerable<RiskProfileInfo>>(riskProfiles);
     }
