@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Erm.DataAccess;
 
-public sealed class RiskProfileRepository : IRiskProfileRepository
+public sealed class RiskProfileRepository(ErmDbContext dbContext) : IRiskProfileRepository
 {
-    private readonly ErmDbContext _db = new();
+    private readonly ErmDbContext _db = dbContext;
 
     public async Task CreateAsync(RiskProfile entity, CancellationToken token = default)
     {

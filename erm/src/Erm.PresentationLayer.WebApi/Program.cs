@@ -1,4 +1,29 @@
+using Erm.BussinessLayer;
+using Erm.BussinessLayer.Validators;
+using Erm.DataAccess;
+
+using FluentValidation;
+
+using Microsoft.EntityFrameworkCore;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAutoMapper(options =>
+{
+    options.AddProfile<RiskProfileInfoProfile>();
+});
+
+builder.Services.AddDbContext<ErmDbContext>(options => 
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DbConnection")));
+
+builder.Services.AddStackExchangeRedisCache(options 
+    => options.Configuration = builder.Configuration.GetConnectionString("RedisConnection"));
+
+builder.Services.AddScoped<RiskProfileRepository>();
+builder.Services.AddScoped<RiskProfileRepositoryProxy>();
+builder.Services.AddScoped<IRiskProfileService, RiskProfileService>();
+
+builder.Services.AddScoped<IValidator<RiskProfileInfo>, RiskProfileInfoValidator>();
 
 builder.Services.AddControllers();
 

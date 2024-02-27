@@ -6,14 +6,9 @@ namespace Erm.PresentationLayer.WebApi;
 
 [ApiController]
 [Route("api/riskprofiles")]
-public sealed class RiskProfileController : ControllerBase
+public sealed class RiskProfileController(IRiskProfileService riskProfileService) : ControllerBase
 {
-    private readonly RiskProfileService _riskProfileService;
-
-    public RiskProfileController()
-    {
-        _riskProfileService = new();
-    }
+    private readonly IRiskProfileService _riskProfileService = riskProfileService;
 
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] RiskProfileInfo riskProfileInfo)
@@ -22,6 +17,7 @@ public sealed class RiskProfileController : ControllerBase
         return Ok();
     }
 
+    
     [HttpGet]
     public async Task<IActionResult> Query([FromQuery] string? query, [FromQuery] string? name)
     {

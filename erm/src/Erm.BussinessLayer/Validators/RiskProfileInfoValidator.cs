@@ -2,9 +2,9 @@ using FluentValidation;
 
 namespace Erm.BussinessLayer.Validators;
 
-internal sealed class RiskProfileInfoValidator : AbstractValidator<RiskProfileInfo>
+public sealed class RiskProfileInfoValidator : AbstractValidator<RiskProfileInfo>
 {
-    internal RiskProfileInfoValidator()
+    public RiskProfileInfoValidator()
     {
         RuleFor(prop => prop.Name).NotEmpty().MinimumLength(3).MaximumLength(50);
         RuleFor(prop => prop.Description).NotEmpty().MinimumLength(10).MaximumLength(500);
