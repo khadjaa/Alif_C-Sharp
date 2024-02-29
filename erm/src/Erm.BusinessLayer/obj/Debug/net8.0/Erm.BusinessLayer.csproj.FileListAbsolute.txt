@@ -1,0 +1,16 @@
+D:\csharp\Alif_C-Sharp\erm\src\Erm.BusinessLayer\bin\Debug\net8.0\Erm.BusinessLayer.deps.json
+D:\csharp\Alif_C-Sharp\erm\src\Erm.BusinessLayer\bin\Debug\net8.0\Erm.BusinessLayer.dll
+D:\csharp\Alif_C-Sharp\erm\src\Erm.BusinessLayer\bin\Debug\net8.0\Erm.BusinessLayer.pdb
+D:\csharp\Alif_C-Sharp\erm\src\Erm.BusinessLayer\bin\Debug\net8.0\Erm.DataAccess.dll
+D:\csharp\Alif_C-Sharp\erm\src\Erm.BusinessLayer\bin\Debug\net8.0\Erm.DataAccess.pdb
+D:\csharp\Alif_C-Sharp\erm\src\Erm.BusinessLayer\obj\Debug\net8.0\Erm.BusinessLayer.csproj.AssemblyReference.cache
+D:\csharp\Alif_C-Sharp\erm\src\Erm.BusinessLayer\obj\Debug\net8.0\Erm.BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\csharp\Alif_C-Sharp\erm\src\Erm.BusinessLayer\obj\Debug\net8.0\Erm.BusinessLayer.AssemblyInfoInputs.cache
+D:\csharp\Alif_C-Sharp\erm\src\Erm.BusinessLayer\obj\Debug\net8.0\Erm.BusinessLayer.AssemblyInfo.cs
+D:\csharp\Alif_C-Sharp\erm\src\Erm.BusinessLayer\obj\Debug\net8.0\Erm.BusinessLayer.csproj.CoreCompileInputs.cache
+D:\csharp\Alif_C-Sharp\erm\src\Erm.BusinessLayer\obj\Debug\net8.0\Erm.BusinessLayer.sourcelink.json
+D:\csharp\Alif_C-Sharp\erm\src\Erm.BusinessLayer\obj\Debug\net8.0\Erm.Busi.5772FCA5.Up2Date
+D:\csharp\Alif_C-Sharp\erm\src\Erm.BusinessLayer\obj\Debug\net8.0\Erm.BusinessLayer.dll
+D:\csharp\Alif_C-Sharp\erm\src\Erm.BusinessLayer\obj\Debug\net8.0\refint\Erm.BusinessLayer.dll
+D:\csharp\Alif_C-Sharp\erm\src\Erm.BusinessLayer\obj\Debug\net8.0\Erm.BusinessLayer.pdb
+D:\csharp\Alif_C-Sharp\erm\src\Erm.BusinessLayer\obj\Debug\net8.0\ref\Erm.BusinessLayer.dll

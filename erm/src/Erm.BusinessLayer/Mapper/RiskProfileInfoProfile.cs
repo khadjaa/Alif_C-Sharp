@@ -1,0 +1,28 @@
+using AutoMapper;
+
+using Erm.DataAccess;
+
+namespace Erm.BusinessLayer;
+
+public class RiskProfileInfoProfile : Profile
+{
+    public RiskProfileInfoProfile()
+    {
+        CreateMap<RiskProfileInfo, RiskProfile>()
+            .ForMember(dest => dest.RiskName, opt => opt.MapFrom(src => src.Name))
+            .ForMember(dest => dest.Risk, 
+                opt => opt.MapFrom(src => new Risk 
+                { 
+                    Name = src.Risk, 
+                    Description = src.Risk, 
+                    OccurrenceProbability = src.OccurrenceProbability, 
+                    PotentialBusinessImpact = src.PotentialBusinessImpact, 
+                    Type = (RiskType)src.Type 
+                }))
+            .ForMember(dest => dest.BusinessProcess, 
+                opt => opt.MapFrom(src => new BusinessProcess { Name = src.BusinessProcess, Domain = src.BusinessProcess }))
+                .ReverseMap()
+                .ForMember(dest => dest.BusinessProcess, opt => opt.MapFrom(src => src.BusinessProcess.Name))
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.RiskName));
+    }
+}

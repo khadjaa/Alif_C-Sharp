@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4CC9F574-9658-4107-9362-336EF58A65F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erm.BussinessLayer", "src\Erm.BussinessLayer\Erm.BussinessLayer.csproj", "{7204C2B6-F6AE-4C1B-9D4D-37559B33AD6C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erm.BusinessLayer", "src\Erm.BusinessLayer\Erm.BusinessLayer.csproj", "{7204C2B6-F6AE-4C1B-9D4D-37559B33AD6C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erm.DataAccess", "src\Erm.DataAccess\Erm.DataAccess.csproj", "{02CA172F-CF8D-45E3-94F2-DA473E0D1F2B}"
 EndProject

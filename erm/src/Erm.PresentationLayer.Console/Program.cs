@@ -1,4 +1,4 @@
-﻿using Erm.BussinessLayer;
+﻿using Erm.BusinessLayer;
 using Erm.DataAccess;
 
 internal class Program 
@@ -13,8 +13,6 @@ internal class Program
         {
             try
             {
-                // Console.ForegroundColor = ConsoleColor.White;
-
                 Console.Write(CommandHelper.InputSymbol);
                 cmd = Console.ReadLine();
 
@@ -25,18 +23,21 @@ internal class Program
                         string riskName = Console.ReadLine();
                         Console.WriteLine("Enter risk description:");
                         string riskDescription = Console.ReadLine();
-                        int riskOccurreceProbability;
+                        
+                        int riskOccurrenceProbability;
                         Console.WriteLine("Enter occurrence probability:");
-                        while (!int.TryParse(Console.ReadLine(), out riskOccurreceProbability))
+                        while (!int.TryParse(Console.ReadLine(), out riskOccurrenceProbability))
                         {
                             Console.WriteLine("Invalid input. Please enter a valid integer value for occurrence probability:");
                         }
+                        
                         int riskPotentialBusinessImpact;
                         Console.WriteLine("Enter potential business impact:");
                         while (!int.TryParse(Console.ReadLine(), out riskPotentialBusinessImpact))
                         {
                             Console.WriteLine("Invalid input. Please enter a valid integer value for potential business impact:");
                         }
+                        
                         RiskType riskType;
                         Console.WriteLine("Enter risk type:");
                         while (!Enum.TryParse(Console.ReadLine(), out riskType))
@@ -48,23 +49,28 @@ internal class Program
                         {
                             Name = riskName,
                             Description = riskDescription,
-                            OccurrenceProbability = riskOccurreceProbability,
+                            OccurrenceProbability = riskOccurrenceProbability,
                             PotentialBusinessImpact = riskPotentialBusinessImpact,
                             Type = riskType.ToString()
                         };
 
                         riskService.Create(riskInfo);
+                        
                         break;
                     case CommandHelper.GetRiskCommand:
                         Console.WriteLine("Enter risk name for get:");
                         string riskNameToGet = Console.ReadLine();
+                        
                         Risk risk = riskService.Get(riskNameToGet);
+                        
                         Console.WriteLine($"Get name of Risk {risk.Name}");
                         break;
                     case CommandHelper.GetRiskProfileCommand:
                         Console.WriteLine("Enter risk profile name for get:");
                         string rpNameToGet = Console.ReadLine();
+                        
                         RiskProfileInfo riskProfile = await riskProfileService.GetAsync(rpNameToGet);
+                        
                         Console.WriteLine($"Get name of Risk in RiskProfile {riskProfile.Name}");
                         break;
                     case CommandHelper.CreateRiskProfileCommand:
@@ -74,12 +80,14 @@ internal class Program
                         string rpDescription = Console.ReadLine();
                         Console.WriteLine("Enter business process:");
                         string rpBusinessProcess = Console.ReadLine();
-                        int rpOccurreceProbability;
+                        
+                        int rpOccurrenceProbability;
                         Console.WriteLine("Enter occurrence probability:");
-                        while (!int.TryParse(Console.ReadLine(), out rpOccurreceProbability))
+                        while (!int.TryParse(Console.ReadLine(), out rpOccurrenceProbability))
                         {
                             Console.WriteLine("Invalid input. Please enter a valid integer value for occurrence probability:");
                         }
+                        
                         int rpPotentialBusinessImpact;
                         Console.WriteLine("Enter potential business impact:");
                         while (!int.TryParse(Console.ReadLine(), out rpPotentialBusinessImpact))
@@ -92,13 +100,14 @@ internal class Program
                             Name = rpName,
                             Description = rpDescription,
                             BusinessProcess = rpBusinessProcess,
-                            OccurreceProbability = rpOccurreceProbability,
+                            OccurrenceProbability = rpOccurrenceProbability,
                             PotentialBusinessImpact = rpPotentialBusinessImpact,
                             Risk = "Risk",
                             Type = 1
                         };
 
                         await riskProfileService.CreateAsync(riskProfileInfo);
+                        
                         break;
                     case CommandHelper.UpdateRiskProfileCommand:
                         Console.WriteLine("Enter risk profile name for update:");
@@ -109,12 +118,14 @@ internal class Program
                         string rpDescriptionToUpdate = Console.ReadLine();
                         Console.WriteLine("Enter new business process:");
                         string rpBusinessProcessToUpdate = Console.ReadLine();
-                        int rpOccurreceProbabilityToUpdate;
-                        Console.WriteLine("Enternew occurrence probability:");
-                        while (!int.TryParse(Console.ReadLine(), out rpOccurreceProbabilityToUpdate))
+                        
+                        int rpOccurrenceProbabilityToUpdate;
+                        Console.WriteLine("Enter new occurrence probability:");
+                        while (!int.TryParse(Console.ReadLine(), out rpOccurrenceProbabilityToUpdate))
                         {
                             Console.WriteLine("Invalid input. Please enter a valid integer value for occurrence probability:");
                         }
+                        
                         int rpPotentialBusinessImpactToUpdate;
                         Console.WriteLine("Enter new potential business impact:");
                         while (!int.TryParse(Console.ReadLine(), out rpPotentialBusinessImpactToUpdate))
@@ -127,16 +138,19 @@ internal class Program
                             Name = rpNewName,
                             Description = rpDescriptionToUpdate,
                             BusinessProcess = rpBusinessProcessToUpdate,
-                            OccurreceProbability = rpOccurreceProbabilityToUpdate,
+                            OccurrenceProbability = rpOccurrenceProbabilityToUpdate,
                             PotentialBusinessImpact = rpPotentialBusinessImpactToUpdate
                         };
 
                         await riskProfileService.UpdateAsync(rpNameToUpdate, riskProfileInfoToUpdate);
+                       
                         break;
                     case CommandHelper.DeleteRiskProfileCommand: 
                         Console.WriteLine("Enter risk profile name for delete:");
                         string rpNameToDelete = Console.ReadLine();
+                        
                         await riskProfileService.DeleteAsync(rpNameToDelete);
+                        
                         break;
                     case CommandHelper.HelpCommand:
                         Console.WriteLine("> Available commands:");
@@ -155,26 +169,29 @@ internal class Program
                     case CommandHelper.CountRiskProfileCommand:
                         Console.WriteLine("Enter risk level name for count:");
                         string rlNameToCount = Console.ReadLine();
+                        
                         double count = await riskProfileService.CalculateRiskAsync(rlNameToCount);
+                        
                         Console.WriteLine($"Count {count}");
                         break;
                     case CommandHelper.QueryRiskProfileCommand:
                         Console.WriteLine("Enter query:");
                         string query = Console.ReadLine();
+                        
                         IEnumerable<RiskProfileInfo> riskProfileInfos = await riskProfileService.QueryAsync(query);
+                        
                         foreach (RiskProfileInfo item in riskProfileInfos)
                         {
                             Console.WriteLine(item);
                         }
+                        
                         break;
                     default:
-                        // Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine(CommandHelper.UnknownCommandMessage);
                         break;
                 }
             } catch (Exception ex)
             {
-                // Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(CommandHelper.InputSymbol + ex.Message);
             }   
         }
@@ -189,7 +206,6 @@ file static class CommandHelper
     public const string ExitCommand = "exit";
     public const string HelpCommand = "help";
     public const string CreateRiskProfileCommand = "create_rsf";
-    public const string CreateRiskProfileDescriptionCommand = "create_rsf_des";
     public const string UnknownCommandMessage = "Unknown command, use help to see available commands.";
     public const string GetRiskProfileCommand = "get_rsf";
     public const string UpdateRiskProfileCommand = "update_rsf";

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Erm.BussinessLayer\Erm.BussinessLayer.csproj" />
+    <ProjectReference Include="..\Erm.BusinessLayer\Erm.BusinessLayer.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

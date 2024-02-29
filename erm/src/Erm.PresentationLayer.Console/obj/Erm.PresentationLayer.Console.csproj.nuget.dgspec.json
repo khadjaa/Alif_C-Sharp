@@ -4,14 +4,14 @@
     "D:\\csharp\\Alif_C-Sharp\\erm\\src\\Erm.PresentationLayer.Console\\Erm.PresentationLayer.Console.csproj": {}
   },
   "projects": {
-    "D:\\csharp\\Alif_C-Sharp\\erm\\src\\Erm.BussinessLayer\\Erm.BussinessLayer.csproj": {
+    "D:\\csharp\\Alif_C-Sharp\\erm\\src\\Erm.BusinessLayer\\Erm.BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\csharp\\Alif_C-Sharp\\erm\\src\\Erm.BussinessLayer\\Erm.BussinessLayer.csproj",
-        "projectName": "Erm.BussinessLayer",
-        "projectPath": "D:\\csharp\\Alif_C-Sharp\\erm\\src\\Erm.BussinessLayer\\Erm.BussinessLayer.csproj",
+        "projectUniqueName": "D:\\csharp\\Alif_C-Sharp\\erm\\src\\Erm.BusinessLayer\\Erm.BusinessLayer.csproj",
+        "projectName": "Erm.BusinessLayer",
+        "projectPath": "D:\\csharp\\Alif_C-Sharp\\erm\\src\\Erm.BusinessLayer\\Erm.BusinessLayer.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "D:\\csharp\\Alif_C-Sharp\\erm\\src\\Erm.BussinessLayer\\obj\\",
+        "outputPath": "D:\\csharp\\Alif_C-Sharp\\erm\\src\\Erm.BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -19,6 +19,9 @@
         "originalTargetFrameworks": [
           "net8.0"
         ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
@@ -83,6 +86,9 @@
         "originalTargetFrameworks": [
           "net8.0"
         ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
@@ -149,12 +155,15 @@
         "originalTargetFrameworks": [
           "net8.0"
         ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\csharp\\Alif_C-Sharp\\erm\\src\\Erm.BussinessLayer\\Erm.BussinessLayer.csproj": {
-                "projectPath": "D:\\csharp\\Alif_C-Sharp\\erm\\src\\Erm.BussinessLayer\\Erm.BussinessLayer.csproj"
+              "D:\\csharp\\Alif_C-Sharp\\erm\\src\\Erm.BusinessLayer\\Erm.BusinessLayer.csproj": {
+                "projectPath": "D:\\csharp\\Alif_C-Sharp\\erm\\src\\Erm.BusinessLayer\\Erm.BusinessLayer.csproj"
               }
             }
           }
