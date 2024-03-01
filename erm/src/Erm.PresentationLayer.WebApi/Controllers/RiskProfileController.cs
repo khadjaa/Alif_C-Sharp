@@ -1,6 +1,7 @@
 using Erm.BusinessLayer;
 
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Distributed;
 
 namespace Erm.PresentationLayer.WebApi;
 
@@ -17,7 +18,6 @@ public sealed class RiskProfileController(IRiskProfileService riskProfileService
         return Ok();
     }
 
-    
     [HttpGet]
     public async Task<IActionResult> Query([FromQuery] string? query, [FromQuery] string? name)
     {
@@ -39,5 +39,26 @@ public sealed class RiskProfileController(IRiskProfileService riskProfileService
     public async Task<IActionResult> GetByName([FromRoute] string name)
     {
         return Ok(await _riskProfileService.GetAsync(name));
+    }
+
+    [HttpPut]
+    [Route("{name}")]
+    public async Task<IActionResult> Update([FromRoute] string name, [FromBody] RiskProfileInfo riskProfileInfo)
+    {
+        await _riskProfileService.UpdateAsync(name, riskProfileInfo);
+        return Ok();
+    }
+
+    [HttpDelete]
+    public async Task<IActionResult> Delete([FromQuery] string name)
+    {
+        await _riskProfileService.DeleteAsync(name);
+        return Ok();
+    }
+
+    [HttpGet("GetCalculateRisk")]
+    public async Task<IActionResult> GetCalculateRisk([FromQuery] string name)
+    {
+        return Ok(await _riskProfileService.CalculateRiskAsync(name));
     }
 }

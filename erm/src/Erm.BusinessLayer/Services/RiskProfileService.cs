@@ -71,7 +71,7 @@ public sealed class RiskProfileService(
         var riskProfile = await _repository.GetAsync(riskProfileName);
 
         double calculateRisk = riskProfile.OccurreceProbability * riskProfile.PotentialBusinessImpact;
-
+        
         return calculateRisk;
     }
 
