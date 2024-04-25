@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Erm.PresentationLayer.WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c25c22ae33291eb1ff3d47b3b1a251ceec692592")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+53959a1fc5620a3a7890eb20359d575a2d3d969a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Erm.PresentationLayer.WebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Erm.PresentationLayer.WebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

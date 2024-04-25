@@ -38,7 +38,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseAuthorization();
+app.UseMiddleware<ApiKeyMiddleware>();
+
 app.MapControllers();
 app.UseHttpsRedirection();
-
 app.Run();

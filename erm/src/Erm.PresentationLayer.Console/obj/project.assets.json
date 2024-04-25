@@ -1075,7 +1075,10 @@
         },
         "runtime": {
           "bin/placeholder/Erm.BusinessLayer.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "Erm.DataAccess/1.0.0": {
         "type": "project",

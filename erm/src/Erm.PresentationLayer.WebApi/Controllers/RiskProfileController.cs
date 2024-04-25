@@ -42,10 +42,10 @@ public sealed class RiskProfileController(IRiskProfileService riskProfileService
     }
 
     [HttpPut]
-    [Route("{name}")]
-    public async Task<IActionResult> Update([FromRoute] string name, [FromBody] RiskProfileInfo riskProfileInfo)
+    [Route("{nameForUpdate}")]
+    public async Task<IActionResult> Update([FromRoute] string nameForUpdate, [FromBody] RiskProfileInfo riskProfileInfo)
     {
-        await _riskProfileService.UpdateAsync(name, riskProfileInfo);
+        await _riskProfileService.UpdateAsync(nameForUpdate, riskProfileInfo);
         return Ok();
     }
 
